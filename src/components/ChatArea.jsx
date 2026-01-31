@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from 'react';
-import { FaPaperPlane, FaUser, FaRobot } from 'react-icons/fa';
+import { FaPaperPlane, FaUser, FaRobot, FaBars } from 'react-icons/fa';
 
-const ChatArea = ({ messages, isTyping, sendMessage }) => {
+const ChatArea = ({ messages, isTyping, sendMessage, toggleSidebar, sidebarOpen }) => {
   const [input, setInput] = useState('');
+  const [isSending, setIsSending] = useState(false);
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -13,8 +14,16 @@ const ChatArea = ({ messages, isTyping, sendMessage }) => {
     scrollToBottom();
   }, [messages, isTyping]);
 
+  // Reset isSending when typing stops
+  useEffect(() => {
+    if (!isTyping) {
+      setIsSending(false);
+    }
+  }, [isTyping]);
+
   const handleSend = () => {
-    if (input.trim()) {
+    if (input.trim() && !isSending && !isTyping) {
+      setIsSending(true);
       sendMessage(input);
       setInput('');
     }
@@ -32,7 +41,10 @@ const ChatArea = ({ messages, isTyping, sendMessage }) => {
   };
 
   const handleSuggestedQuestionClick = (question) => {
-    sendMessage(question);
+    if (!isSending && !isTyping) {
+      setIsSending(true);
+      sendMessage(question);
+    }
   };
 
   const renderSuggestions = (suggestions) => {
@@ -43,6 +55,7 @@ const ChatArea = ({ messages, isTyping, sendMessage }) => {
             key={idx}
             className="suggestion-chip"
             onClick={() => handleSuggestedQuestionClick(text)}
+            disabled={isSending || isTyping}
           >
             {text}
           </button>
@@ -53,6 +66,13 @@ const ChatArea = ({ messages, isTyping, sendMessage }) => {
 
   return (
     <div className="chat-area">
+      <button className="menu-toggle" onClick={toggleSidebar} aria-label="Toggle sidebar">
+        <FaBars />
+      </button>
+      <div 
+        className={`overlay ${sidebarOpen ? 'active' : ''}`} 
+        onClick={toggleSidebar}
+      ></div>
       <main className={`messages-area ${messages.length === 0 ? 'centered-vertical' : ''}`} id="messages-area">
         <div id="chat-box-container">
           <div id="chat-box">

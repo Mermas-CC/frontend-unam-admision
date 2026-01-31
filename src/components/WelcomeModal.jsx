@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
-import { FaRobot, FaTimes } from 'react-icons/fa';
+import { FaTimes } from 'react-icons/fa';
 
 const WelcomeModal = ({ onClose, theme }) => {
+  const logoSrc = theme === 'light' ? '/unam.png' : '/unam_logo_claro.png';
+
   useEffect(() => {
     // Prevent body scrolling when modal is open
     document.body.style.overflow = 'hidden';
@@ -26,18 +28,18 @@ const WelcomeModal = ({ onClose, theme }) => {
         
         <div className="welcome-modal-header">
           <div className="welcome-modal-bot-icon">
-            <FaRobot />
+            <img src={logoSrc} alt="UNAM Logo" className="modal-main-logo" />
           </div>
         </div>
 
         <div className="welcome-modal-body">
           <h2 className="welcome-modal-title">
-            ¡Bienvenido al Asistente de Admisión!
+            ¡Bienvenido al Asistente de Admisión UNAM!
           </h2>
           
           <div className="welcome-modal-description">
             <p>
-              Soy tu asistente virtual especializado en el proceso de admisión. 
+              Soy tu asistente virtual especializado en el proceso de admisión de la Universidad Nacional de Moquegua. 
               ¡Comencemos a conversar!
             </p>
           </div>

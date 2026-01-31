@@ -9,6 +9,9 @@ function App() {
   const [messages, setMessages] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
   const [showWelcomeModal, setShowWelcomeModal] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const API_URL = import.meta.env.VITE_API_URL;
+
 
   useEffect(() => {
     document.body.setAttribute('data-theme', theme);
@@ -31,22 +34,27 @@ function App() {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
   const sendMessage = async (message) => {
     const newMessages = [...messages, { role: 'user', parts: [message] }];
     setMessages(newMessages);
     setIsTyping(true);
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/chat', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ 
-          message: message,
-          history: messages 
-        }),
-      });
+      const response = await fetch(`${API_URL}/chat`, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({ 
+    message: message,
+    history: messages 
+  }),
+});
+
 
       if (!response.body) return;
 
@@ -93,8 +101,19 @@ function App() {
 
   return (
     <div className="app-container">
-      <Sidebar theme={theme} toggleTheme={toggleTheme} sendExampleMessage={sendExampleMessage} />
-      <ChatArea messages={messages} isTyping={isTyping} sendMessage={sendMessage} />
+      <Sidebar 
+        theme={theme} 
+        toggleTheme={toggleTheme} 
+        sendExampleMessage={sendExampleMessage}
+        isOpen={sidebarOpen}
+      />
+      <ChatArea 
+        messages={messages} 
+        isTyping={isTyping} 
+        sendMessage={sendMessage}
+        toggleSidebar={toggleSidebar}
+        sidebarOpen={sidebarOpen}
+      />
       {showWelcomeModal && (
         <WelcomeModal onClose={closeWelcomeModal} theme={theme} />
       )}
