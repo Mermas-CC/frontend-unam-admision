@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   FaMoon,
   FaSun,
@@ -7,7 +8,8 @@ import {
   FaHeadset,
 } from "react-icons/fa";
 
-const Sidebar = ({ theme, toggleTheme, sendExampleMessage, isOpen }) => {
+const Sidebar = ({ theme, toggleTheme, sendExampleMessage, isOpen, onAdminToggle }) => {
+  const [isLogoHovered, setIsLogoHovered] = useState(false);
   // Use dark logo for light theme, light logo for dark theme
   const logoSrc = theme === 'light' ? '/unam.png' : '/unam_logo_claro.png';
   
@@ -82,7 +84,34 @@ const Sidebar = ({ theme, toggleTheme, sendExampleMessage, isOpen }) => {
       <div className="prompt-desc">
         Este asistente virtual fue desarrollado para simplificar el proceso de
         admisión de la Universidad Nacional de Moquegua.
+        {import.meta.env.DEV && (
+            <div 
+              onMouseEnter={() => setIsLogoHovered(true)}
+              onMouseLeave={() => setIsLogoHovered(false)}
+              style={{ 
+                marginTop: '1.5rem', 
+                borderTop: '1px solid var(--border-color)', 
+                paddingTop: '1rem', 
+                textAlign: 'center',
+                opacity: isLogoHovered ? 1 : 0.7,
+                transition: 'all 0.3s ease'
+              }}
+            >
+                <img 
+                  src={theme === 'light' ? '/logo_aimara_white.png' : '/logo_aimara_dark.png'} 
+                  alt="Aimara Lab" 
+                  style={{ 
+                    height: '20px', 
+                    width: 'auto', 
+                    margin: '0 auto',
+                    filter: isLogoHovered ? 'grayscale(0%)' : 'grayscale(100%)',
+                    transition: 'filter 0.3s ease'
+                  }}
+                />
+            </div>
+        )}
       </div>
+
 
       <div className="sidebar-footer">
         <div className="sidebar-controls">

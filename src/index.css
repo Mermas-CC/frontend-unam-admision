@@ -83,6 +83,7 @@ body {
     transform 0.3s ease;
   flex-shrink: 0;
   z-index: 20;
+  overflow-y: auto; /* Allow scrolling for long content */
 }
 
 [data-theme="light"] .sidebar {

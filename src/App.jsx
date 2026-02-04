@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Sidebar from './components/Sidebar';
 import ChatArea from './components/ChatArea';
 import WelcomeModal from './components/WelcomeModal';
+import AdminPanel from './components/AdminPanel';
 import './index.css';
 
 function App() {
@@ -10,7 +11,9 @@ function App() {
   const [isTyping, setIsTyping] = useState(false);
   const [showWelcomeModal, setShowWelcomeModal] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [showAdmin, setShowAdmin] = useState(false);
   const API_URL = import.meta.env.VITE_API_URL;
+
 
 
   useEffect(() => {
@@ -99,6 +102,16 @@ function App() {
     sendMessage(message);
   };
 
+  useEffect(() => {
+    // Check for secret portal access via URL query
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('portal') === 'admision') {
+      setShowAdmin(true);
+      // Clean URL after entering
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  }, []);
+
   return (
     <div className="app-container">
       <Sidebar 
@@ -106,6 +119,7 @@ function App() {
         toggleTheme={toggleTheme} 
         sendExampleMessage={sendExampleMessage}
         isOpen={sidebarOpen}
+        onAdminToggle={null} /* Access is now hidden */
       />
       <ChatArea 
         messages={messages} 
@@ -116,6 +130,9 @@ function App() {
       />
       {showWelcomeModal && (
         <WelcomeModal onClose={closeWelcomeModal} theme={theme} />
+      )}
+      {showAdmin && (
+        <AdminPanel onClose={() => setShowAdmin(false)} theme={theme} />
       )}
     </div>
   );

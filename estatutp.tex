@@ -1,0 +1,494 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-tabla]{babel}
+\usepackage{geometry}
+\usepackage{tabularx}
+\usepackage{longtable} % Vital para actas largas
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{array} % Para mejor manejo de columnas
+
+% --- CONFIGURACIÓN DE PÁGINA NOTARIAL ---
+\geometry{left=2.5cm, right=2cm, top=2.5cm, bottom=2.5cm}
+\setlength{\parindent}{0pt} % Sin sangría para aspecto legal
+\setlength{\parskip}{0.1cm} % Espacio entre párrafos
+
+% --- COLORES Y ESTILOS ---
+\definecolor{headergray}{gray}{0.95}
+\definecolor{dayseparator}{RGB}{230, 240, 255} % Azul muy pálido para separar días
+
+% --- COMANDOS PERSONALIZADOS ---
+\newcommand{\diaheader}[4]{
+    \rowcolor{dayseparator}
+    \multicolumn{3}{|l|}{\textbf{#1}} \\
+    \rowcolor{dayseparator}
+    \multicolumn{3}{|l|}{\small \textbf{Horario:} #2 | \textbf{Quórum:} #3} \\
+    \rowcolor{dayseparator}
+    \multicolumn{3}{|l|}{\small \textit{#4}} \\ \hline
+}
+
+% --- COMANDOS PARA FORMATO ANTES/DESPUES ---
+\newcommand{\bloquemod}[4]{
+    \subsection*{Artículo #1}
+    \nopagebreak
+    \small
+    \textbf{Texto vigente (ANTES)} \\
+    \textit{#2}
+    
+    \vspace{0.2cm}
+    \textbf{✏️ Texto aprobado (DESPUÉS)} \\
+    \textbf{#3}
+    
+    \vspace{0.1cm}
+    \footnotesize \textit{Votación: #4}
+    \normalsize
+    \vspace{0.1cm}
+    \hrule
+    \vspace{0.4cm}
+}
+
+\begin{document}
+
+% --- ENCABEZADO DEL ACTA ---
+\begin{center}
+    {\Large \textbf{ACTA DE ASAMBLEA GENERAL EXTRAORDINARIA N° 003-2026}}\\
+    {\large \textbf{AIMARA LAB}}
+\end{center}
+
+En la ciudad de Ilo, departamento de Moquegua, siendo las 10:00 horas del día 25 de enero de 2026, se reúnen los miembros de la Asociación Civil sin fines de lucro denominada \textbf{AIMARA LAB}, bajo la modalidad virtual, con el objeto de tratar la Modificación Parcial del Estatuto y Admisión de nuevos miembros.
+
+% --- 1. CONTROL DE ASISTENCIA Y QUÓRUM ---
+\section*{1. Control de Asistencia y Quórum}
+Actúa como Presidente el Sr. \textbf{Honorio Apaza Alanoca} y como Secretario el Sr. \textbf{Elmer Andres Collanqui Casapia}. Se procede al llamado de lista de los asociados hábiles convocados:
+
+\begin{center}
+\small
+\begin{tabularx}{0.9\textwidth}{|c|X|c|c|}
+\hline
+\rowcolor{headergray}
+\textbf{N°} & \textbf{Apellidos y Nombres} & \textbf{DNI} & \textbf{Condición} \\ \hline
+1 & Apaza Alanoca, Honorio & 70490843 & Habilitado \\ \hline
+2 & Collanqui Casapia, Elmer Andres & 71040159 & Habilitado \\ \hline
+3 & Yana Mamani, Víctor & 02437887 & Habilitado \\ \hline
+4 & Balcona Viza, Jamir & 71452659 & Habilitado \\ \hline
+5 & Cayo Molloni, Fiorella Mirian & 71007803 & Habilitado \\ \hline
+6 & Maquera Ortega, Seline Macial & 72369674 & Habilitado \\ \hline
+7 & Arocutipa Lovon, Yoselin Dayana & 74942205 & Habilitado \\ \hline
+8 & Quispe Salas, Sofia Yamilet & 74988657 & Habilitado \\ \hline
+9 & Reynoso Serra, Allison Inguer & 73063584 & Habilitado \\ \hline
+10 & Rocca Huillca, Jesus Edward & 71907177 & Habilitado \\ \hline
+\end{tabularx}
+\end{center}
+
+Habiéndose verificado el quórum reglamentario en las distintas sesiones que se detallan a continuación, se da por instalada válidamente la Asamblea.
+
+% --- 2. DESARROLLO DE LA MODIFICACIÓN ESTATUTARIA ---
+\section*{2. Desarrollo de la Modificación Estatutaria}
+
+El Presidente expone la necesidad de actualizar el estatuto para adecuarlo a las nuevas exigencias operativas y legales. Se procede a la lectura, debate y votación artículo por artículo.
+
+% --- ARTÍCULOS MODIFICADOS ---
+
+\bloquemod{11}
+{LOS ACUERDOS SE ADOPTAN POR MAYORÍA SIMPLE DE LOS VOTOS ASISTENTES.}
+{Los acuerdos se adoptan por mayoría simple de los votos de los asistentes. En caso de empate, el Presidente de la Asamblea tendrá voto dirimente, equivalente a doble voto.}
+{A Favor (6), En Contra (1), Abstención (1).}
+
+\bloquemod{12}
+{EL QUORUM PARA LA INSTALACIÓN DE LA ASAMBLEA EN PRIMERA CONVOCATORIA ES LA MITAD MÁS UNO DE SUS ASOCIADOS, EN SEGUNDA CONVOCATORIA BASTA LA ASISTENCIA DE CUALQUIER NÚMERO DE ASOCIADOS. \newline LAS CONVOCATORIAS A LOS ASOCIADOS SE REALIZARÁN MEDIANTE CITACIONES Y/O AVISOS EN EL DIARIO Y/O AVISOS EN EL DOMICILIO FISCAL DE LA ASOCIACIÓN, CITACIÓN POR WHATSAPP O MEDIOS INFORMÁTICOS. CUALQUIERA DE ELLAS SERÁ VÁLIDA. PUEDE LLEVARSE A CABO LA ASAMBLEA EN EL MISMO DÍA CON DIFERENCIA HORARIA EN SEGUNDA CITACIÓN. LAS CITACIONES A ASAMBLEAS SE DAN CON TRES (03) DÍAS DE ANTICIPACIÓN COMO MÍNIMO.}
+{El quórum para la instalación de la Asamblea General, en primera convocatoria, es la mitad más uno de los asociados; en segunda convocatoria, basta la asistencia de cualquier número de asociados. \newline Las convocatorias a los asociados se realizarán mediante citaciones y/o avisos en el diario, avisos en el domicilio fiscal de la Asociación, citaciones por WhatsApp u otros medios informáticos, siendo cualquiera de ellos válido. \newline La Asamblea podrá llevarse a cabo el mismo día, con diferencia horaria entre la primera y segunda citación.}
+{Unanimidad (8 votos).}
+
+\bloquemod{16}
+{A LAS ASAMBLEAS SOLO PODRÁN PARTICIPAR CON DERECHO A VOZ Y VOTO LOS ASOCIADOS, PUDIENDO DELEGAR SU REPRESENTACIÓN EN UN APODERADO MEDIANTE CARTA SIMPLE CON FIRMA LEGALIZADA, DIRIGIDA AL PRESIDENTE EN CADA OPORTUNIDAD SOLO PARA ASISTENCIA, QUIENES ACTUARÁN SIN VOZ, PERO CON DERECHO A VOTO.}
+{A las Asambleas podrán participar los asociados con derecho a voz y voto. Los asociados podrán delegar su representación en un asociado mediante carta simple, dirigida al Presidente y válida únicamente para la Asamblea correspondiente. El apoderado ejercerá exclusivamente el derecho a voto en representación del asociado, computándose su participación para efectos de quórum y votación, sin derecho a voz.}
+{A Favor (7), En Contra (1).}
+
+\bloquemod{19}
+{LA JUNTA DIRECTIVA ESTARÁ FORMADO POR: PRESIDENTE, SECRETARIO DE ACTAS Y ARCHIVO Y TESORERO.}
+{La Junta Directiva estará conformada por los siguientes cargos: Presidente, Secretario de Actas y Archivo, Tesorero y dos (02) Vocales.}
+{Unanimidad (8 votos).}
+
+\bloquemod{20}
+{SON ATRIBUCIONES DE LA JUNTA DIRECTIVA:
+\begin{enumerate}[leftmargin=*, nosep]
+\item CUMPLIR Y HACER CUMPLIR LAS DISPOSICIONES DEL ESTATUTO.
+\item CUMPLIR Y HACER CUMPLIR LOS ACUERDOS DE LA ASAMBLEA.
+\item ELABORAR EL PLAN DE TRABAJO QUE DEBE SER SOMETIDO Y APROBADO POR LA ASAMBLEA.
+\item LLEVAR UN REGISTRO DE ASOCIADOS, ACTAS Y CUENTAS.
+\item COMUNICAR A LA ASAMBLEA LOS PRINCIPALES CONTRATOS Y MINUTAS POR CELEBRAR EN NOMBRE DE LA ASOCIACIÓN.
+\item FIJAR LOS COSTOS EXTRAORDINARIOS.
+\item REALIZAR TRÁMITES Y/O GASTOS ANTE OTRAS INSTUCIONES PREVIO AVISO A LA JUNTA DIRECTIVA.
+\end{enumerate}}
+{Son atribuciones de la Junta Directiva:
+\begin{enumerate}[leftmargin=*, nosep]
+\item Cumplir y hacer cumplir las disposiciones del Estatuto.
+\item Cumplir y hacer cumplir los acuerdos de la Asamblea General.
+\item Elaborar el Plan de Trabajo, el cual deberá ser sometido a consideración y aprobación de la Asamblea General.
+\item Llevar el registro de asociados, actas y cuentas de la Asociación.
+\item Comunicar a la Asamblea General los principales contratos y minutas que se proyecten celebrar en nombre de la Asociación.
+\item Fijar los costos extraordinarios.
+\item Realizar trámites y/o gastos ante otras instituciones, previo aviso a la Junta Directiva.
+\item Proponer a la Asamblea General la creación, modificación o supresión de unidades orgánicas de la Asociación.
+\item Nombrar a los responsables de las unidades orgánicas de la Asociación.
+\item Aprobar o ratificar la designación de los Jefes de Proyecto realizada por los Directores de las unidades orgánicas, así como supervisar su desempeño y el cumplimiento de los objetivos técnicos.
+\end{enumerate}}
+{Unanimidad (8 votos).}
+
+\bloquemod{24}
+{EL PRESIDENTE TIENE LAS ATRIBUCIONES SIGUIENTES:
+\begin{enumerate}[leftmargin=*, nosep]
+\item ES EL REPRESENTANTE LEGAL DE LA ASOCIACIÓN Y COMO TAL LO REPRESENTA ANTE TODO TIPO DE AUTORIDADES PÚBLICAS, POLÍTICAS, MILITARES Y DE TODA ÍNDOLE CON LAS FACULTADES GENERALES DEL MANDATO Y LAS ESPECIALES QUE LA LEY LES CONFIERE SIN LIMITACIONES ALGUNA.
+\item REPRESENTAR A LA ASOCIACIÓN EN TODOS LOS ACTOS PÚBLICOS Y PRIVADOS EN LOS QUE INTERVENGA LA ASOCIACIÓN.
+\item CONVOCAR Y PRESIDIR LA ASAMBLEA Y LA JUNTA DIRECTIVA.
+\item FIRMAR CONJUNTAMENTE CON EL TESORERO, LOS DOCUMENTOS QUE TENGAN ACTOS DE DISPOSICIÓN DE DINERO DE LA ASOCIACIÓN. PODRÁ ABRIR CUENTAS BANCARIAS A NOMBRE DE LA ASOCIACIÓN CONJUNTAMENTE CON EL TESORERO, LOS RETIROS DE LAS CUENTAS Y CANCELACIONES SE HARÁN CON DOBLE FIRMA DEL PRESIDENTE Y EL TESORERO.
+\item FIRMAR TODA LA DOCUMENTACIÓN PARA LA MARCHA DE LA ASOCIACIÓN.
+\item PONER EL VISTO BUENO A LA DOCUMENTACIÓN QUE EMITA CUALQUIER MIEMBRO DE LA JUNTA DIRECTIVA.
+\item DAR CUENTA A LA ASAMBLEA DE SUS ACTOS Y DE LA JUNTA DIRECTIVA.
+\item PRESENTAR UN MEMORIAL ANUAL ANTE LA ASAMBLEA GENERAL.
+\item CUMPLIR Y HACER CUMPLIR LOS ACUERDOS DE LA ASAMBLEA Y DE LA JUNTA DIRECTIVA.
+\item GOZA DE LAS FACULTADES DEL ARTÍCULO 74 Y 75 DEL CÓDIGO PROCESAL CIVIL.
+\item FIRMAR CON EL TESORERO CONTRATOS RELATIVOS A BIENES Y GRAVÁMENES.
+\end{enumerate}}
+{El Presidente es el representante legal de la Asociación y, como tal, la representa ante todo tipo de autoridades públicas y privadas, con las facultades generales del mandato y las especiales que la ley le confiere, sin limitación alguna. Son atribuciones del Presidente las siguientes:
+\begin{enumerate}[leftmargin=*, nosep]
+\item Representar legalmente a la Asociación ante autoridades públicas, políticas, militares y de cualquier índole, así como ante personas naturales o jurídicas, públicas o privadas.
+\item Representar a la Asociación en todos los actos públicos y privados en los que intervenga.
+\item Convocar y presidir la Asamblea General y la Junta Directiva.
+\item Estar facultado para suscribir, conjuntamente con otro miembro de la Junta Directiva, los documentos relacionados con actos de disposición de fondos, así como para la apertura, manejo, retiro y cancelación de cuentas bancarias a nombre de la Asociación, siendo obligatoria la doble firma.
+\item Firmar toda la documentación necesaria para la marcha y funcionamiento de la Asociación.
+\item Otorgar el visto bueno a la documentación que emita cualquier miembro de la Junta Directiva.
+\item Dar cuenta a la Asamblea General de sus actos y de los acuerdos adoptados por la Junta Directiva.
+\item Presentar un memorial o informe anual ante la Asamblea General.
+\item Cumplir y hacer cumplir los acuerdos de la Asamblea General y de la Junta Directiva.
+\item Ejercer las facultades previstas en los artículos 74 y 75 del Código Procesal Civil.
+\item Suscribir, conjuntamente con el Tesorero, contratos relativos a bienes y gravámenes de la Asociación.
+\item En caso de ausencia temporal por viaje, motivos de salud o fuerza mayor, delegar funciones específicas de representación administrativa o de gestión a otro miembro de la Junta Directiva, mediante documento escrito con firma simple. Para operaciones bancarias y financieras, la delegación deberá efectuarse conforme a las formalidades exigidas por la entidad financiera correspondiente, precisando las facultades otorgadas y el plazo de duración del encargo.
+\end{enumerate}}
+{Unanimidad (8 votos).}
+
+\bloquemod{25}
+{SON ATRIBUCIONES DEL SECRETARIO DE ACTAS:
+\begin{enumerate}[leftmargin=*, nosep]
+\item REEMPLAZAR TEMPORAL O DEFINITIVAMENTE AL PRESIDENTE...
+\item LLEVAR AL DÍA EL LIBRO DE ACTAS DE LAS ASAMBLEAS GENERALES Y DE LA JUNTA DIRECTIVA.
+\item LLEVAR LA CORRESPONDENCIA DE LA ASOCIACIÓN Y DE LA JUNTA DIRECTIVA.
+\item SUSCRIBIR JUNTO CON EL PRESIDENTE LA DOCUMENTACIÓN NECESARIA PARA EL DESARROLLO DE LAS ACTIVIDADES DE LA ASOCIACIÓN.
+\item GUARDAR EL ARCHIVO DE LA ASOCIACIÓN Y LLEVAR EL LIBRO PADRÓN AL DÍA.
+\item ESTAR PRESENTE EN TODAS LAS SESIONES DE LA JUNTA DIRECTIVA Y ASAMBLEAS GENERALES.
+\end{enumerate}}
+{Son atribuciones del Secretario de Actas las siguientes:
+\begin{enumerate}[leftmargin=*, nosep]
+\item Reemplazar temporal o definitivamente al Presidente en los casos en que este no pudiera desempeñar sus funciones, ya sea por fallecimiento, enfermedad, impedimento físico, ausencia, viaje o cualquier otra circunstancia fortuita, gozando de las mismas facultades, salvo que la Asamblea General de Asociados designe a otra persona conforme al presente Estatuto.
+\item Llevar al día el Libro de Actas de las Asambleas Generales y de la Junta Directiva.
+\item Llevar la correspondencia de la Asociación y de la Junta Directiva.
+\item Suscribir, conjuntamente con el Presidente, la documentación necesaria para el desarrollo de las actividades de la Asociación.
+\item Custodiar el archivo de la Asociación y mantener actualizado el Libro Padrón de asociados.
+\item Estar presente en todas las sesiones de la Junta Directiva y en las Asambleas Generales.
+\item Estar facultado para suscribir, conjuntamente con otro miembro de la Junta Directiva, los documentos relacionados con actos de disposición de fondos, siendo obligatoria la doble firma.
+\end{enumerate}}
+{Unanimidad (8 votos).}
+
+\bloquemod{26}
+{ATRIBUCIONES DEL TESORERO:
+\begin{enumerate}[leftmargin=*, nosep]
+\item RECABAR LAS CUOTAS DE INSCRIPCIÓN ORDINARIAS Y EXTRAORDINARIAS.
+\item DEPOSITAR EL DINERO DE LA ASOCIACIÓN EN UNA CUENTA BANCARIA.
+\item FIRMAR CONJUNTAMENTE CON EL PRESIDENTE LOS DOCUMENTOS QUE CONTENGAN ACTOS DE DISPOSICIÓN DE BIENES Y RETIRO DE DINERO DE LA ASOCIACIÓN.
+\item LLEVAR EL LIBRO DE CAJA AL DÍA.
+\item APERTURAR CUENTAS BANCARIAS CONJUNTAMENTE CON EL PRESIDENTE.
+\item PRESENTAR EL ESTADO DE CUENTAS DE LA ASOCIACIÓN EN ASAMBLEA.
+\item EXHIBIR A CUALQUIER SOCIO CUANDO LO SOLICITE EL LIBRO DE CAJA.
+\item FIRMAR CON EL PRESIDENTE LOS CONTRATOS DE DISPOSICIÓN Y GRAVAMEN DE BIENES.
+\item DESEMPEÑAR LAS ACTIVIDADES QUE SE LE ENCOMIENDE EN ASAMBLEA GENERAL.
+\end{enumerate}}
+{Son atribuciones del Tesorero las siguientes:
+\begin{enumerate}[leftmargin=*, nosep]
+\item Recaudar las cuotas de inscripción ordinarias y extraordinarias de los asociados.
+\item Depositar el dinero de la Asociación en cuentas bancarias abiertas a nombre de la Asociación.
+\item Suscribir, conjuntamente con cualquier miembro de la Junta Directiva, los documentos que contengan actos de disposición de bienes y retiro de dinero de la Asociación, siendo obligatoria la doble firma.
+\item Llevar al día el Libro de Caja de la Asociación.
+\item Aperturar cuentas bancarias a nombre de la Asociación, conjuntamente con el Presidente.
+\item Presentar el estado de cuentas de la Asociación ante la Asamblea General.
+\item Exhibir el Libro de Caja a cualquier asociado que lo solicite.
+\item Firmar, conjuntamente con el Presidente, los contratos de disposición y gravamen de bienes de la Asociación.
+\item Desempeñar las funciones y actividades que le sean encomendadas por la Asamblea General.
+\end{enumerate}}
+{Unanimidad (9 votos).}
+
+\bloquemod{28}
+{SÓLO SON ASOCIADOS LAS PERSONAS NATURALES O JURÍDICAS QUE TENGAN INTERÉS EN:
+\begin{enumerate}[leftmargin=*, nosep]
+\item EFECTUAR PROYECTOS PARA EL DESARROLLO DEL PERÚ.
+\item DEDICARSE A LA UNIFICACIÓN PARA EL LOGRO DEL BIEN COLECTIVO Y MEJORAS NECESARIAS.
+\item PRESTAR APOYO INMEDIATO A TODA OBRA QUE BENEFICIE A SUS ASOCIADOS.
+\item SALVAGUARDAR LOS INTERESES DE SUS ASOCIADOS.
+\item VELAR EN FORMA PERMANENTE POR EL DESARROLLO, EL PROGRESO Y LA IMAGEN DE LA ASOCIACIÓN.
+\end{enumerate}}
+{Sólo son asociados las personas naturales que tengan interés en:
+\begin{enumerate}[leftmargin=*, nosep]
+\item Efectuar proyectos para el desarrollo a nivel nacional e internacional.
+\item Dedicarse a la unificación para el logro del bien colectivo y las mejoras necesarias.
+\item Prestar apoyo inmediato a toda obra que beneficie a sus asociados.
+\item Salvaguardar los intereses de sus asociados.
+\item Velar en forma permanente por el desarrollo, el progreso y la imagen de la Asociación.
+\end{enumerate}}
+{A Favor (8), Abstención (1).}
+
+\bloquemod{30}
+{SON DEBERES Y OBLIGACIONES DE LOS ASOCIADOS:
+\begin{enumerate}[leftmargin=*, nosep]
+\item CONOCER Y CUMPLIR EL ESTATUTO DE LA ASOCIACIÓN.
+\item CUMPLIR LAS DECISIONES DE LA ASAMBLEA Y LA JUNTA DIRECTIVA.
+\item PAGAR PUNTUALMENTE SUS CUOTAS, ORDINARIAS Y EXTRAORDINARIAS.
+\item ASISTIR A LAS ASAMBLEAS PUNTUALMENTE.
+\item DESEMPEÑAR LAS COMISIONES QUE LA ASAMBLEA GENERAL O LA JUNTA DIRECTIVA LE ENCOMIENDE.
+\item TODOS LOS SOCIOS DEBEN CUMPLIR SUS ACUERDOS RESPETÁNDOSE Y SI NO FUERA ASÍ TENDRÁN SUS CASTIGOS.
+\end{enumerate}}
+{SON DEBERES Y OBLIGACIONES DE LOS ASOCIADOS:
+\begin{enumerate}[leftmargin=*, nosep]
+\item Conocer y cumplir el Estatuto de la Asociación.
+\item Cumplir las decisiones de la Asamblea General y de la Junta Directiva.
+\item Pagar puntualmente sus cuotas ordinarias y extraordinarias.
+\item Asistir puntualmente a las asambleas.
+\item Desempeñar las comisiones que la Asamblea General o la Junta Directiva les encomiende.
+\item Cumplir los acuerdos adoptados, manteniendo el respeto mutuo; el incumplimiento dará lugar a la aplicación de las sanciones que establezca el Estatuto.
+\end{enumerate}}
+{Unanimidad (9 votos).}
+
+\bloquemod{31}
+{SON DERECHOS DE LOS ASOCIADOS:
+\begin{enumerate}[leftmargin=*, nosep]
+\item ELEGIR Y SER ELEGIDOS COMO MIEMBROS DE LA JUNTA DIRECTIVA.
+\item PARTICIPAR EN LA ASAMBLEA CON DERECHO A VOZ Y VOTO.
+\item SOLICITAR AL CONCEJO DIRECTIVO O A UNO DE SUS MIEMBROS INFORMES SOBRE LA MARCHA DE LA ASOCIACIÓN.
+\item EXIGIR EL ESTRICTO CUMPLIMIENTO DEL ESTATUTO Y DE LOS ACUERDOS DE LA ASAMBLEA Y DE LOS ACUERDOS DE LA JUNTA DIRECTIVA.
+\item DENUNCIAR LAS IRREGULARIDADES COMETIDAS POR LA JUNTA DIRECTIVA O CUALQUIERA DE SUS MIEMBROS, CON PREVIA SUSTENTACIÓN DE HECHOS.
+\item ACOGERSE A LOS BENEFICIOS QUE LA ASOCIACIÓN CONSIGA Y QUE SEAN COMUNES A LOS SOCIOS QUE APORTEN PARA LA COMPRA DE TERRENO Y OTROS EN SU MOMENTO.
+\item SOLICITAR LA DEFENSA REQUERIDA CUANDO CONSIDERE VULNERADOS SUS DERECHOS ESTATUTARIOS.
+\item PODER SER REPRESENTADO EN LAS ASAMBLEAS POR UN APODERADO CON VOZ Y VOTO CON LA ÚNICA LIMITACIÓN DE QUE EL APODERADO NO PODRÁ EJERCER CARGOS EN REPRESENTACIÓN DE LA ASOCIACIÓN.
+\item PODRÁ GOZAR DE TODOS LOS BENEFICIOS QUE LOS ASOCIADOS CONSIGUIERON PARA SUS MIEMBROS.
+\end{enumerate}}
+{SON DERECHOS DE LOS ASOCIADOS:
+\begin{enumerate}[leftmargin=*, nosep]
+\item Elegir y ser elegidos como miembros de la Junta Directiva.
+\item Participar en la Asamblea General con derecho a voz y voto.
+\item Solicitar a la Junta Directiva o a cualquiera de sus miembros, informes sobre la marcha de la Asociación.
+\item Exigir el estricto cumplimiento del Estatuto y de los acuerdos de la Asamblea General y de la Junta Directiva.
+\item Denunciar las irregularidades cometidas por la Junta Directiva o cualquiera de sus miembros, con la debida sustentación de los hechos.
+\item Acogerse a los beneficios que la Asociación obtenga y que sean comunes a los asociados que aporten para la compra de terreno u otros fines que se acuerden oportunamente.
+\item Solicitar la defensa correspondiente cuando considere vulnerados sus derechos estatutarios.
+\item Ser representado en las Asambleas por otro asociado, mediante carta poder simple, teniendo el representante derecho a voto pero no a voz, no pudiendo ejercer cargos en representación de la Asociación.
+\item Gozar de todos los beneficios que la Asociación obtenga.
+\end{enumerate}}
+{Inc 8: A Favor (5), Sin voto (2), Abs (2). Inc 9: A Favor (8), Abs (1).}
+
+\bloquemod{32}
+{DE LAS SANCIONES. \newline
+LAS SANCIONES A IMPONERSE SON: \newline
+AMONESTACIÓN, INHABILITACIÓN, APLICACIÓN DE MULTAS, DESTITUCIÓN DEL CARGO O MANDATO, EXPULSIÓN Y DEPURACIÓN COMO SOCIO.}
+{DE LAS SANCIONES \newline
+Las sanciones que podrán imponerse a los asociados, según la gravedad de la falta, son las siguientes:
+\begin{enumerate}[label=\alph*), leftmargin=*, nosep]
+\item Amonestación escrita.
+\item Inhabilitación temporal de derechos.
+\item Aplicación de multas.
+\item Destitución del cargo o mandato.
+\item Expulsión y depuración como asociado.
+\end{enumerate}
+Las sanciones serán impuestas por la Junta Directiva, garantizando el derecho de defensa del asociado.}
+{A Favor (7), Abstención (1).}
+
+\bloquemod{33}
+{LOS ASOCIADOS SERÁN AMONESTADOS POR LAS SIGUIENTES CAUSALES:
+\begin{enumerate}[leftmargin=*, nosep]
+\item POR IMPUNTUALIDAD A LAS ASAMBLEAS.
+\item INASISTENCIA INJUSTIFICADAS A LAS ASAMBLEAS.
+\item FALTA DEL PAGO DE LAS CUOTAS ACORDADAS EN LAS ASAMBLEAS.
+\end{enumerate}}
+{DE LA AMONESTACIÓN \newline
+Los asociados serán amonestados por escrito por la Junta Directiva en los siguientes casos:
+\begin{enumerate}[leftmargin=*, nosep]
+\item Atentar contra el patrimonio de la Asociación o contra cualquiera de sus asociados.
+\item Incurrir en conductas que atenten contra la fe pública o el buen nombre de la Asociación.
+\end{enumerate}}
+{Unanimidad (9 votos).}
+
+\bloquemod{34}
+{LOS ASOCIADOS SERÁN INHABILITADOS PARA EJERCER SUS DERECHOS POR:
+\begin{enumerate}[leftmargin=*, nosep]
+\item NEGATIVA INJUSTIFICADA A LA COMISIÓN ENCOMENDADA POR LA ASAMBLEA O LA JUNTA DIRECTIVA.
+\item NO ABONAR LAS CUOTAS ORDINARIAS O EXTRAORDINARIAS FIJADAS.
+\item INCUMPLIR EN EL REGLAMENTO INTERNO DE LA ASOCIACIÓN.
+\end{enumerate}}
+{DE LA INHABILITACIÓN \newline
+Los asociados serán inhabilitados para ejercer sus derechos de voz y voto en los siguientes casos:
+\begin{enumerate}[leftmargin=*, nosep]
+\item Negativa injustificada a cumplir con una comisión, tarea técnica o encomienda delegada por la Asamblea General o la Junta Directiva.
+\item Incumplir de manera reiterada el Estatuto o las disposiciones internas de la Asociación.
+\end{enumerate}}
+{A Favor (7), Abstención (2).}
+
+\bloquemod{35}
+{LOS MIEMBROS DE LA JUNTA DIRECTIVA PODRÁN SER DESTITUIDOS DE SU CARGO POR:
+\begin{enumerate}[leftmargin=*, nosep]
+\item INCUMPLIMIENTO GRAVE DE FUNCIONES, MALVERSACIÓN DE FONDOS.
+\item MANEJO INDEBIDO DE FONDOS O DE BIENES DE LA ASOCIACIÓN.
+\item DISPONER DE LOS BIENES DE LA ASOCIACIÓN SIN AUTORIZACIÓN DE LA ASAMBLEA SIN PERJUICIO DE LAS ACCIONES LEGALES A INICIARSE EN SU CONTRA.
+\end{enumerate}}
+{Los miembros de la Junta Directiva podrán ser destituidos de su cargo por acuerdo de la Asamblea General, cuando incurran en las siguientes causales graves:
+\begin{enumerate}[leftmargin=*, nosep]
+\item Incumplimiento grave de sus funciones o malversación de fondos de la Asociación.
+\item Manejo indebido de los fondos o de los bienes tangibles e intangibles de la Asociación.
+\item Disponer de los bienes o recursos de la Asociación sin la autorización de la Asamblea General o contraviniendo el régimen de firmas establecido, sin perjuicio de las acciones legales civiles o penales que correspondan.
+\end{enumerate}}
+{A Favor (8), Abstención (1).}
+
+\bloquemod{37}
+{CUALQUIERA DE LOS ASOCIADOS PODRÁ RETIRARSE DE LA ASOCIACIÓN EN CUALQUIER MOMENTO PRESENTANDO PARA ELLO SU CARTA DE RENUNCIA CON FIRMA LEGALIZADA PERDIENDO CON ELLO TODOS LOS BENEFICIOS QUE PUDIERA ESTAR GESTIONANDO LA ASOCIACIÓN.}
+{De la renuncia al cargo y de la renuncia a la condición de asociado
+\begin{enumerate}[label=\alph*), leftmargin=*, nosep]
+\item Renuncia al cargo en la Junta Directiva:
+Cualquier miembro de la Junta Directiva podrá renunciar a su cargo en cualquier momento, mediante comunicación escrita dirigida a la Asociación. La renuncia al cargo no implica la pérdida de la condición de asociado, conservando el renunciante todos los derechos y obligaciones que correspondan a su calidad de socio, salvo aquellos inherentes al cargo ejercido.
+\item Renuncia a la condición de asociado:
+Cualquier asociado podrá retirarse voluntariamente de la Asociación en cualquier momento, para lo cual deberá presentar su carta de renuncia con firma legalizada. La renuncia a la condición de asociado implica la pérdida de todos los derechos y beneficios que pudiera estar gestionando u otorgando la Asociación, sin derecho a reclamo alguno sobre el patrimonio social.
+\end{enumerate}}
+{Unanimidad (9 votos).}
+
+\bloquemod{41}
+{LA DISOLUCIÓN DE LA ASOCIACIÓN PODRÁ SER ACORDADA EN ASAMBLEA GENERAL SIEMPRE QUE SE HUBIESE SIDO ESPECIALMENTE CONVOCADA PARA ELLO Y SE OBSERVEN LOS REQUISITOS ESTABLECIDOS AL RESPECTO EN EL PRESENTE ESTATUTO.}
+{La disolución de la Asociación podrá ser acordada en Asamblea General Ordinaria o Extraordinaria, siempre que hubiese sido especialmente convocada para tal efecto y se observen los requisitos establecidos al respecto en el presente Estatuto.}
+{Unanimidad (8 votos).}
+
+\bloquemod{44}
+{SON CAUSALES DE EXCLUSIÓN DE LOS SOCIOS LAS SIGUIENTES:
+\begin{enumerate}[label=\Alph*), leftmargin=*, nosep]
+\item POR FALTA DE PAGO DE LAS CUOTAS SOCIALES POR MÁS DE SEIS MESES CONSECUTIVOS.
+\item POR HABER SIDO SENTENCIADO EL SOCIO POR ALGÚN DAÑO CONTRA LA ASOCIACIÓN O LOS ASOCIADOS.
+\item POR INCUMPLIR UN ACUERDO DE ASAMBLEA GENERAL QUE ERA DE CUMPLIMIENTO OBLIGATORIO PARA TODOS LOS SOCIOS.
+\item POR FALTA DE ACTIVIDAD DEL SOCIO; CONTINUOS SEIS MESES LA JUNTA DIRECTIVA PODRÁ EXCLUIR AL ASOCIADO INACTIVO, PREVIA NOTIFICACIÓN.
+\end{enumerate}}
+{La Asamblea podrá determinar la expulsión de un asociado por las siguientes causales graves:
+\begin{enumerate}[leftmargin=*, nosep]
+\item Actuar contra los fines y objetivos de la Asociación o realizar actividades que causen daño institucional o afecten el prestigio de la misma.
+\item Contar con condena judicial firme por delito doloso que afecte la reputación de la Asociación.
+\item Apropiación indebida o uso no autorizado de activos tangibles o intangibles propiedad de la Asociación.
+\item Revelar información confidencial o datos sensibles de los proyectos de investigación a terceros, sin autorización expresa.
+\item Agresiones físicas graves contra otros asociados o miembros de la Junta Directiva.
+\item Reincidencia reiterada en causales que hayan generado inhabilitaciones previas.
+\end{enumerate}}
+{A Favor (6), Abstención (2).}
+
+\vspace{0.5cm}
+% --- ARTÍCULOS NUEVOS ---
+\section*{Incorporación de Artículos Nuevos}
+
+\textbf{Artículo 45.– De los Vocales} \\
+✏️ Los Vocales son miembros de la Junta Directiva y tienen las siguientes atribuciones y funciones:
+\begin{enumerate}[label=\alph*)]
+\item Apoyar y colaborar con el Presidente, Secretario y Tesorero en el cumplimiento de sus funciones, cuando sea requerido.
+\item Sustituir temporalmente al Secretario o al Tesorero, en caso de ausencia, impedimento o imposibilidad de ejercer sus funciones, previa disposición de la Junta Directiva o de la Asamblea General, según corresponda.
+\item Realizar operaciones y gestiones bancarias, firmando de manera conjunta únicamente con el Presidente, Secretario o Tesorero.
+\item En ningún caso los Vocales podrán realizar operaciones bancarias de manera individual ni conjuntamente entre sí, siendo obligatoria la participación del Presidente, Secretario o Tesorero.
+\item Las demás funciones que les asigne la Junta Directiva o la Asamblea General, de conformidad con el presente Estatuto.
+\end{enumerate}
+\textit{Votación: Unanimidad (8 votos).}
+
+\vspace{0.1cm}
+
+\textbf{Artículo 46.– De la elección complementaria por creación de nuevos cargos} \\
+✏️ Cuando, como consecuencia de la modificación del Estatuto, se creen nuevos cargos en la Junta Directiva, la Asamblea General Extraordinaria convocada para tal efecto procederá a la elección complementaria de los asociados que ocuparán dichos cargos.
+Los elegidos ejercerán funciones por el tiempo restante del período de la Junta Directiva vigente, salvo acuerdo expreso en contrario de la Asamblea. \\
+\textit{Votación: Unanimidad (8 votos).}
+
+\vspace{0.1cm}
+
+\textbf{Artículo 47.– De la vacancia de cargos en la Junta Directiva} \\
+✏️ En caso de vacancia por renuncia, fallecimiento o incapacidad de cualquier miembro de la Junta Directiva, la Asamblea General Extraordinaria elegirá a un asociado para que asuma el cargo por el tiempo restante del período del directivo saliente. \\
+\textit{Votación: Unanimidad (8 votos).}
+
+\vspace{0.1cm}
+
+\textbf{Artículo 48.– Del cómputo de asistencia, votos y abstenciones} \\
+✏️ Para efectos del cómputo de asistencia y votación en las Asambleas Generales Ordinarias y Extraordinarias, así como en las reuniones ordinarias y extraordinarias de la Junta Directiva, se aplicarán las siguientes reglas:
+\begin{enumerate}[label=\alph*)]
+\item Se considerarán asistentes con derecho a voto las personas que se encuentren presentes al momento del llamado de lista, así como aquellas que se incorporen con posterioridad y sean registradas como tardanza, siempre que se encuentren habilitadas conforme al Estatuto.
+\item El número de votos válidos se determinará en función del número de personas asistentes registradas conforme al literal anterior.
+\item En caso de que uno o más asistentes se retiren de la asamblea o reunión antes de efectuarse una votación, su voto será considerado como abstención para efectos del cómputo correspondiente.
+\item Las abstenciones no se computan como votos a favor ni en contra, pero sí se consideran para efectos de asistencia y quórum, salvo disposición expresa en contrario del presente Estatuto.
+\end{enumerate}
+\textit{Votación: A Favor (7), Abstención (1).}
+
+\vspace{0.1cm}
+
+
+\textbf{Artículo 49.– De la validez de las actas} \\
+✏️ Las actas de las Asambleas Generales Ordinarias y Extraordinarias, así como de las reuniones ordinarias y extraordinarias de la Junta Directiva, serán válidas y producirán plenos efectos legales cuando cumplan con los requisitos establecidos en el presente Estatuto, conforme a las siguientes reglas:
+\begin{enumerate}[label=\alph*)]
+\item Las actas deberán contener, como mínimo, la identificación del órgano que se reúne, la fecha, hora y lugar de la sesión, la relación de asistentes, la agenda tratada y los acuerdos adoptados.
+\item Las actas serán válidas cuando cuenten con la firma del Presidente y del Secretario, o de quienes hagan sus veces, pudiendo dichas firmas ser manuscritas o digitales.
+\item La firma digital tendrá la misma validez y eficacia jurídica que la firma manuscrita, siempre que permita identificar de manera indubitable a los firmantes y garantice la integridad del contenido del acta.
+\item Las actas debidamente firmadas constituirán prueba suficiente de los acuerdos adoptados, sin perjuicio de su posterior inscripción o formalización cuando así lo exija la ley o el presente Estatuto.
+\end{enumerate}
+\textit{Votación: Unanimidad (8 votos).}
+
+
+% --- 3. ADMISIÓN DE NUEVOS ASOCIADOS ---
+\section*{3. Admisión de Nuevos Asociados}
+
+Concluida la reforma de los estatutos sociales, el Presidente somete a consideración de la Asamblea las solicitudes de ingreso de nuevos miembros. Tras la evaluación de sus perfiles y el cumplimiento de los requisitos establecidos, la Asamblea General acuerda por unanimidad la admisión de los siguientes ciudadanos en calidad de asociados:
+\begin{center}
+\small
+\begin{tabularx}{0.85\textwidth}{|c|X|c|c|}
+\hline
+\rowcolor{headergray}
+\textbf{N°} & \textbf{Apellidos y Nombres} & \textbf{DNI} & \textbf{Votación} \\ \hline
+01 & \textbf{Sr. Jose Enrique Paye Mamani} & 73736059 & Unanimidad \\ \hline
+02 & \textbf{Sr. Hans Lut Amesquita Chambilla} & 74356398 & Unanimidad \\ \hline
+03 & \textbf{Sra. Mariela Melissa Nina Capujra} & 74627480 & Unanimidad \\ \hline
+\end{tabularx}
+\end{center}
+
+
+Los nuevos asociados aceptan en este acto los fines de la Asociación y se comprometen a cumplir fielmente con el Estatuto modificado y aprobado en la presente sesión.
+
+\vspace{0.4cm}
+% --- SECCIÓN DE CIERRE ACTUALIZADA ---
+\hrule
+\begin{center}
+    \vspace{0.5cm}
+    \textbf{4. CIERRE DE ACTA}
+\end{center}
+
+Siendo las 23:12 horas del día 27 de enero de 2026 (concluyendo la jornada final de la sesión continuada), y no habiendo más puntos que tratar, se levanta la sesión. Se procede a la redacción, lectura y aprobación de la presente acta, la cual es suscrita por el Presidente y Secretario en señal de conformidad, así como por los asociados designados para tal fin.
+\vspace{3cm}
+% --- SECCIÓN DE FIRMAS (10 ASOCIADOS) ---
+\vspace{1cm}
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{X c X}
+    \rule{6cm}{0.5pt} & \hspace{1cm} & \rule{6cm}{0.5pt} \\
+    \textbf{Honorio Apaza Alanoca} & & \textbf{Elmer Andres Collanqui Casapia} \\
+    Presidente | DNI: 70490843 & & Secretario | DNI: 71040159 \\[1.2cm] % Espacio para firma
+
+    \rule{6cm}{0.5pt} & & \rule{6cm}{0.5pt} \\
+    \textbf{Víctor Yana Mamani} & & \textbf{Jamir Balcona Viza} \\
+    Tesorero | DNI: 02437887 & & Asociado | DNI: 71452659 \\[1.2cm]
+
+    \rule{6cm}{0.5pt} & & \rule{6cm}{0.5pt} \\
+    \textbf{Fiorella Mirian Cayo Molloni} & & \textbf{Seline Macial Maquera Ortega} \\
+    Asociada | DNI: 71007803 & & Asociada | DNI: 72369674 \\[1.2cm]
+
+    \rule{6cm}{0.5pt} & & \rule{6cm}{0.5pt} \\
+    \textbf{Yoselin Dayana Arocutipa Lovon} & & \textbf{Sofia Yamilet Quispe Salas} \\
+    Asociada | DNI: 74942205 & & Asociada | DNI: 74988657 \\[1.2cm]
+
+    \rule{6cm}{0.5pt} & & \rule{6cm}{0.5pt} \\
+    \textbf{Allison Inguer Reynoso Serra} & & \textbf{Jesus Edward Rocca Huillca} \\
+    Asociada | DNI: 73063584 & & Asociado | DNI: 71907177 \\
+\end{tabularx}
+\end{center}
+
+\end{document}
