@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { FaPaperPlane, FaUser, FaRobot, FaBars } from 'react-icons/fa';
 
-const ChatArea = ({ messages, isTyping, sendMessage, toggleSidebar, sidebarOpen }) => {
+const ChatArea = ({ theme, messages, isTyping, sendMessage, toggleSidebar, sidebarOpen }) => {
   const [input, setInput] = useState('');
   const [isSending, setIsSending] = useState(false);
   const messagesEndRef = useRef(null);
@@ -89,7 +89,7 @@ const ChatArea = ({ messages, isTyping, sendMessage, toggleSidebar, sidebarOpen 
                     onChange={handleInputChange}
                     onKeyPress={handleKeyPress}
                   ></textarea>
-                  <button id="send-btn-welcome" className="send-button flex items-center justify-center" onClick={handleSend} disabled={!input.trim()}>
+                  <button id="send-btn-welcome" className="send-button flex items-center justify-center" onClick={handleSend} disabled={!input.trim() || isTyping || isSending}>
                     <FaPaperPlane />
                   </button>
                 </div>
@@ -134,11 +134,31 @@ const ChatArea = ({ messages, isTyping, sendMessage, toggleSidebar, sidebarOpen 
               onChange={handleInputChange}
               onKeyPress={handleKeyPress}
             ></textarea>
-            <button id="send-btn" className="send-button flex items-center justify-center" onClick={handleSend} disabled={!input.trim()}>
+            <button id="send-btn" className="send-button flex items-center justify-center" onClick={handleSend} disabled={!input.trim() || isTyping || isSending}>
               <FaPaperPlane />
             </button>
           </div>
+          {!sidebarOpen && (
+            <div className="developed-by-docked">
+              <p>Developed by:</p>
+              <img 
+                src={theme === 'light' ? '/logo_aimara_dark.png' : '/logo_aimara_white.png'} 
+                alt="Aimara Lab" 
+                className="developed-by-logo-tiny"
+              />
+            </div>
+          )}
         </footer>
+      )}
+      {messages.length === 0 && !sidebarOpen && (
+        <div className="developed-by-folded">
+          <p>Developed by:</p>
+          <img 
+            src={theme === 'light' ? '/logo_aimara_dark.png' : '/logo_aimara_white.png'} 
+            alt="Aimara Lab" 
+            className="developed-by-logo-small"
+          />
+        </div>
       )}
     </div>
   );

@@ -357,7 +357,7 @@ const AdminPanel = ({ onClose, theme }) => {
           padding: 2rem;
           display: grid;
           grid-template-columns: 1fr 1fr;
-          grid-template-rows: auto 200px;
+          grid-template-rows: auto auto auto;
           gap: 1.5rem;
           overflow-y: auto;
         }

@@ -42,6 +42,8 @@ function App() {
   };
 
   const sendMessage = async (message) => {
+    if (isTyping || !message.trim()) return;
+    
     const newMessages = [...messages, { role: 'user', parts: [message] }];
     setMessages(newMessages);
     setIsTyping(true);
@@ -119,9 +121,12 @@ function App() {
         toggleTheme={toggleTheme} 
         sendExampleMessage={sendExampleMessage}
         isOpen={sidebarOpen}
+        toggleSidebar={toggleSidebar}
         onAdminToggle={null} /* Access is now hidden */
+        isTyping={isTyping}
       />
       <ChatArea 
+        theme={theme}
         messages={messages} 
         isTyping={isTyping} 
         sendMessage={sendMessage}

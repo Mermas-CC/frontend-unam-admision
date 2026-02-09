@@ -6,132 +6,106 @@ import {
   FaFileAlt,
   FaCalendarAlt,
   FaHeadset,
+  FaTimes,
+  FaPlus,
 } from "react-icons/fa";
 
-const Sidebar = ({ theme, toggleTheme, sendExampleMessage, isOpen, onAdminToggle }) => {
-  const [isLogoHovered, setIsLogoHovered] = useState(false);
-  // Use dark logo for light theme, light logo for dark theme
+const SidebarSection = ({ title, children }) => (
+  <div className="sidebar-section">
+    {title && <h2 className="sidebar-title">{title}</h2>}
+    <div className="sidebar-section-content">
+      {children}
+    </div>
+  </div>
+);
+
+const SuggestionItem = ({ icon: Icon, title, onClick, disabled }) => (
+  <div 
+    className={`example-prompt-sidebar ${disabled ? 'disabled' : ''}`} 
+    onClick={!disabled ? onClick : undefined} 
+    role="button" 
+    tabIndex={disabled ? -1 : 0}
+    aria-disabled={disabled}
+  >
+    <div className="prompt-icon-wrapper">
+      <Icon className="prompt-icon" />
+    </div>
+    <div className="prompt-content">
+      <div className="prompt-title">{title}</div>
+    </div>
+  </div>
+);
+
+const Sidebar = ({ theme, toggleTheme, sendExampleMessage, isOpen, toggleSidebar, isTyping }) => {
   const logoSrc = theme === 'light' ? '/unam.png' : '/unam_logo_claro.png';
   
   return (
-    <aside className={`sidebar ${isOpen ? 'open' : ''}`} id="sidebar">
+    <aside className={`sidebar ${isOpen ? 'open' : 'collapsed'}`} id="sidebar">
+      <button className="close-sidebar-btn" onClick={toggleSidebar} aria-label="Cerrar sidebar">
+        <FaTimes />
+      </button>
+
       <div className="sidebar-header">
-      <div className="flex justify-center">
-        <img
-          id="unam-logo"
-          src={logoSrc}
-          alt="UNAM Logo"
-        />
+        <img id="unam-logo" src={logoSrc} alt="UNAM Logo" />
       </div>
 
-      </div>
-
-      <h2 className="sidebar-title">Sugerencias</h2>
-      <div className="example-prompts-sidebar">
-        <div
-          className="example-prompt-sidebar"
-          onClick={() =>
-            sendExampleMessage("¿Como funciona el Proceso de admisión?")
-          }
-        >
-          <FaGraduationCap className="prompt-icon" />
-          <div>
-            <div className="prompt-title">Proceso de admisión</div>
-            <div className="prompt-desc">Pasos, requisitos y cronograma.</div>
+      <div className="sidebar-body no-scrollbar">
+        <SidebarSection title="Sugerencias">
+          <div className="example-prompts-sidebar">
+            <SuggestionItem 
+              icon={FaGraduationCap} 
+              title="Proceso de admisión" 
+              onClick={() => sendExampleMessage("¿Como funciona el Proceso de admisión?")}
+              disabled={isTyping}
+            />
+            <SuggestionItem 
+              icon={FaFileAlt} 
+              title="Documentos requeridos" 
+              onClick={() => sendExampleMessage("¿Cuáles son los documentos requeridos?")}
+              disabled={isTyping}
+            />
+            <SuggestionItem 
+              icon={FaCalendarAlt} 
+              title="Fechas importantes" 
+              onClick={() => sendExampleMessage("¿Cuáles son las fechas importantes?")}
+              disabled={isTyping}
+            />
+            <SuggestionItem 
+              icon={FaHeadset} 
+              title="Contacto y soporte" 
+              onClick={() => sendExampleMessage("¿Cómo puedo contactar y obtener soporte?")}
+              disabled={isTyping}
+            />
           </div>
-        </div>
-        <div
-          className="example-prompt-sidebar"
-          onClick={() =>
-            sendExampleMessage("¿Cuáles son los documentos requeridos?")
-          }
-        >
-          <FaFileAlt className="prompt-icon" />
-          <div>
-            <div className="prompt-title">Documentos requeridos</div>
-            <div className="prompt-desc">
-              Lista completa para la inscripción.
-            </div>
-          </div>
-        </div>
-        <div
-          className="example-prompt-sidebar"
-          onClick={() =>
-            sendExampleMessage("¿Cuáles son las fechas importantes?")
-          }
-        >
-          <FaCalendarAlt className="prompt-icon" />
-          <div>
-            <div className="prompt-title">Fechas importantes</div>
-            <div className="prompt-desc">Fechas clave del proceso.</div>
-          </div>
-        </div>
-        <div
-          className="example-prompt-sidebar"
-          onClick={() =>
-            sendExampleMessage("¿Cómo puedo contactar y obtener soporte?")
-          }
-        >
-          <FaHeadset className="prompt-icon" />
-          <div>
-            <div className="prompt-title">Contacto y soporte</div>
-            <div className="prompt-desc">Habla con nuestro equipo.</div>
-          </div>
-        </div>
-      </div>
-      <br />
-      <h2 className="sidebar-title">Acerca de Chatbot</h2>
-      <div className="prompt-desc">
-        Este asistente virtual fue desarrollado para simplificar el proceso de
-        admisión de la Universidad Nacional de Moquegua.
-        {import.meta.env.DEV && (
-            <div 
-              onMouseEnter={() => setIsLogoHovered(true)}
-              onMouseLeave={() => setIsLogoHovered(false)}
-              style={{ 
-                marginTop: '1.5rem', 
-                borderTop: '1px solid var(--border-color)', 
-                paddingTop: '1rem', 
-                textAlign: 'center',
-                opacity: isLogoHovered ? 1 : 0.7,
-                transition: 'all 0.3s ease'
-              }}
-            >
-                <img 
-                  src={theme === 'light' ? '/logo_aimara_white.png' : '/logo_aimara_dark.png'} 
-                  alt="Aimara Lab" 
-                  style={{ 
-                    height: '20px', 
-                    width: 'auto', 
-                    margin: '0 auto',
-                    filter: isLogoHovered ? 'grayscale(0%)' : 'grayscale(100%)',
-                    transition: 'filter 0.3s ease'
-                  }}
-                />
-            </div>
-        )}
-      </div>
+        </SidebarSection>
 
 
+      </div>
+      
       <div className="sidebar-footer">
+        <div className="developed-by-sidebar">
+          <span>DEVELOPED BY:</span>
+          <img 
+            src={theme === 'light' ? '/logo_aimara_dark.png' : '/logo_aimara_white.png'} 
+            alt="Aimara Lab" 
+            className="developed-by-logo"
+          />
+        </div>
+        
         <div className="sidebar-controls">
           <button
             onClick={() => window.location.reload()}
-            className="w-full h-10 flex items-center justify-center"
+            className="control-btn new-chat-btn"
             title="Nueva Conversación"
           >
-            <p>Nuevo Chat</p>
+            <FaPlus /> Nuevo Chat
           </button>
           <button
             onClick={toggleTheme}
-            className="w-full h-10 flex items-center justify-center"
+            className="control-btn theme-toggle-btn"
             title="Cambiar Tema"
           >
-            {theme === "light" ? (
-              <FaMoon className="text-lg" />
-            ) : (
-              <FaSun className="text-lg" />
-            )}
+            {theme === "dark" ? <FaMoon /> : <FaSun />}
           </button>
         </div>
       </div>
