@@ -878,6 +878,16 @@ body {
     top: 1rem;
     left: 1rem;
   }
+  .avatar {
+    display: none;
+  }
+  .message-wrapper {
+    gap: 0;
+    max-width: 100%;
+  }
+  .bot-message-container {
+    max-width: 100%;
+  }
   #chat-box-container {
     padding: 1rem;
   }
