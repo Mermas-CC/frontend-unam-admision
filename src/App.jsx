@@ -10,7 +10,7 @@ function App() {
   const [messages, setMessages] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
   const [showWelcomeModal, setShowWelcomeModal] = useState(false);
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [showAdmin, setShowAdmin] = useState(false);
   const API_URL = import.meta.env.VITE_API_URL;
 
