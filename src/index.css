@@ -646,6 +646,42 @@ body {
   left: 0;
 }
 
+/* Citation Badge Style */
+.citation-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.7rem;
+  background-color: rgba(77, 189, 195, 0.1); /* transparent unam-primary */
+  color: var(--unam-primary);
+  border: 1px solid rgba(77, 189, 195, 0.3);
+  border-radius: 12px;
+  padding: 0.1rem 0.6rem;
+  margin-left: 0.4rem;
+  font-weight: 600;
+  vertical-align: middle;
+  cursor: help;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .citation-badge {
+  background-color: rgba(77, 189, 195, 0.15);
+  color: #6ee7ee; /* Lighter teal for dark mode */
+  border-color: rgba(77, 189, 195, 0.4);
+}
+
+.citation-badge:hover {
+  background-color: var(--unam-primary);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.citation-badge i, 
+.citation-badge svg {
+  font-size: 0.65rem;
+}
+
 .suggestion-chips {
   display: flex;
   flex-wrap: wrap;

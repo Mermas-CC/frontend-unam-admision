@@ -102,7 +102,29 @@ const ChatArea = ({ theme, messages, isTyping, sendMessage, toggleSidebar, sideb
                     <div key={index} className={`message-wrapper ${msg.role}`}>
                       <div className="avatar">{msg.role === 'user' ? <FaUser /> : <FaRobot />}</div>
                       <div className="bot-message-container">
-                        <div className="message-content" dangerouslySetInnerHTML={{ __html: msg.role === 'user' ? msg.parts[0] : window.marked.parse(msg.parts[0]) }}></div>
+                        <div className="message-content">
+                          {msg.role === 'user' ? (
+                            msg.parts[0]
+                          ) : (
+                            // Custom parser for citations
+                            (() => {
+                              const rawHtml = window.marked.parse(msg.parts[0]);
+                              // Replace <citation>...</citation> with styled spans
+                              // We use a regex to find the tags and replace them with the badge structure
+                              // Note: We are parsing HTML string to HTML string here for simplicity with dangerouslySetInnerHTML
+                              // Ideally we would parse to React components, but mixing with marked output is tricky.
+                              // So we inject the span HTML.
+                              const processedHtml = rawHtml.replace(
+                                /&lt;citation&gt;(.*?)&lt;\/citation&gt;|<citation>(.*?)<\/citation>/g, 
+                                (match, p1, p2) => {
+                                  const source = p1 || p2;
+                                  return `<span class="citation-badge" title="Fuente: ${source}"><i class="fa-solid fa-book-open"></i> ${source}</span>`;
+                                }
+                              );
+                              return <div dangerouslySetInnerHTML={{ __html: processedHtml }} />;
+                            })()
+                          )}
+                        </div>
                         {msg.role === 'model' && msg.suggestedQuestions && renderSuggestions(msg.suggestedQuestions)}
                       </div>
                     </div>
