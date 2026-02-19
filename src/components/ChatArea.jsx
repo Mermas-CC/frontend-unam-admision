@@ -116,10 +116,7 @@ const ChatArea = ({ theme, messages, isTyping, sendMessage, toggleSidebar, sideb
                               // So we inject the span HTML.
                               const processedHtml = rawHtml.replace(
                                 /&lt;citation&gt;(.*?)&lt;\/citation&gt;|<citation>(.*?)<\/citation>/g, 
-                                (match, p1, p2) => {
-                                  const source = p1 || p2;
-                                  return `<span class="citation-badge" title="Fuente: ${source}"><i class="fa-solid fa-book-open"></i> ${source}</span>`;
-                                }
+                                ""
                               );
                               return <div dangerouslySetInnerHTML={{ __html: processedHtml }} />;
                             })()
